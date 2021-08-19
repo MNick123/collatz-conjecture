@@ -10,26 +10,28 @@ namespace collatz_conjecture
             Console.WriteLine("Collatz conjeture, type any positive number");
             string numberinputraw = Console.ReadLine();
 
+
+
             try
             {
                 Convert.ToInt32(numberinputraw);
             }
             catch
             {
-
-                Console.WriteLine("You enter a invid number");
+                Console.WriteLine("You enterd a invid number");
                 goto first;
             }
-
-
-
-
 
 
             #region
             long Number = Convert.ToInt64(numberinputraw);
 
-            long staringnumber = Number;
+            if(Number <= 0)
+            {
+                Console.WriteLine("Enter A valid number");
+                goto first;
+
+            }
 
             Start:
             if(Number%2 == 0)
